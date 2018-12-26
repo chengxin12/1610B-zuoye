@@ -1,0 +1,252 @@
+@charset "UTF-8";
+@import 'common.scss';
+@import '_minix.scss';
+
+$font-size: 37.5px !default;
+
+@function rem($px) {
+    @return $px / $font-size * 1rem;
+}
+
+@mixin width($width) {
+    width: $width;
+}
+
+@mixin height($height) {
+    height: $height;
+}
+
+@mixin hidden {
+    overflow: hidden;
+}
+
+%quanju {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: rem(16px);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    header {
+        width: 100%;
+        height: rem(45px);
+        display: flex;
+        @extend %quanju;
+        padding-left: 20px;
+
+        div {
+
+            &:nth-child(1) {
+                flex: 5;
+
+                span {
+                    font-size: 18px;
+                }
+            }
+
+            &:nth-child(2) {
+                flex: 1;
+
+                span {
+                    font-size: 25px;
+                }
+            }
+
+            &:nth-child(3) {
+                flex: 1;
+
+                span {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    .inp {
+        width: 90%;
+        height: rem(40px);
+        background: #F0F1F3;
+        border-radius: 20px;
+        margin: 0 auto;
+
+        span {
+            line-height: 40px;
+            margin-left: 10px;
+
+            b {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        flex: 1;
+        overflow-y: scroll;
+
+        section {
+            width: 100%;
+
+            .swiper-container {
+                width: 100%;
+                height: 255px;
+
+                .swiper-wrapper {
+                    width: 100%;
+                    height: 100%;
+
+                    .swiper-slide {
+                        width: 100%;
+                        height: 100%;
+
+                        .main-content {
+                            width: 100%;
+                            height: 180px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            @extend %quanju;
+
+                            div {
+                                width: 20%;
+                                display: flex;
+                                flex-direction: column;
+                                @extend %quanju;
+                                margin-top: 17px;
+
+                                img {
+                                    width: 60px;
+                                }
+
+                                span {
+                                    font-size: 15px;
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .swiper-pagination {
+                    margin-top: 30px;
+                }
+            }
+
+            .content {
+                width: 95%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                padding: 0 20px;
+                overflow: hidden;
+                background-image: url('../images/11.png');
+
+                .content-title {
+                    width: 100%;
+                    height: 80px;
+                    line-height: 90px;
+                    padding-left: 3px;
+                    color: #fff;
+                }
+
+                .ctitle {
+                    .content-text {
+                        width: 308%;
+                        display: flex;
+                        background: #fff;
+
+                        div {
+                            flex: 1;
+                            margin-right: 10px;
+
+                            img {
+                                width: 100%;
+                                margin-bottom: 5px;
+                            }
+
+                            .p1 {
+                                font-size: 18px;
+                                width: 100px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                margin-bottom: 5px;
+                            }
+
+                            .p2 {
+                                width: 100%;
+
+                                .span1 {
+                                    color: red;
+                                    font-size: 20px;
+                                }
+
+                                .span2 {
+                                    width: 50px;
+                                    height: 50px;
+                                    border: 1px solid red;
+                                    color: red;
+                                    width: 100px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    margin-bottom: 5px;
+                                    margin-left: 10px;
+                                }
+                            }
+
+                            .p3 {
+                                font-size: 18px;
+                                color: #999;
+
+                                s {
+                                    text-decoration: line-through;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main-img {
+                width: 100%;
+                height: 55px;
+                margin-top: 3px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        height: rem(45px);
+        display: flex;
+        @extend %quanju;
+
+        div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            @extend %quanju;
+        }
+    }
+}
